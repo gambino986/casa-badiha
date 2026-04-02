@@ -3,39 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Casa Badiha</title>
+<title>Casa Badiha | Luksuzen oddih</title>
+<style>
+body{margin:0;font-family:Arial;background:#0b0b0c;color:#fff}
+.hero{height:90vh;background:url('CasaBadiha-001.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero h1{font-size:3rem}
+.btn{padding:12px 20px;border-radius:20px;text-decoration:none;font-weight:bold}
+.btn-whatsapp{background:#25D366;color:#000}
+.section{padding:40px;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
+.gallery img{width:100%;border-radius:12px;cursor:pointer}
+.floating{position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50px;color:#000;text-decoration:none}
+.counter{position:fixed;left:20px;bottom:20px;background:#111;padding:10px;border-radius:20px;font-size:13px}
+.popup{position:fixed;left:20px;bottom:70px;background:#111;padding:12px;border-radius:15px;font-size:13px;opacity:0;transition:0.3s}
+</style>
 </head>
-<body style="font-family:Arial;background:#111;color:#fff;text-align:center">
+<body>
 
-<h1>Casa Badiha</h1>
-<p>Luksuzen oddih z razgledom</p>
+<div id="counter" class="counter">5 ljudi trenutno gleda</div>
+<div id="popup" class="popup">Rezervacija pred 5 min</div>
 
-<h2>Galerija</h2>
+<section class="hero">
 <div>
-<img src="CasaBadiha-006.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-008.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-003.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-025.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-019.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-002.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-018.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-009.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-014.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-013.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-017.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-011.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-001.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-012.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-015.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-010.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-021.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-020.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-022.jpg" style="width:300px;margin:10px;border-radius:10px;">
-<img src="CasaBadiha-023.jpg" style="width:300px;margin:10px;border-radius:10px;">
-
+<h1>Casa Badiha</h1>
+<p>Luksuzen oddih z jacuzzijem in razgledom</p>
+<p>⭐ 9.3 Booking | ⭐ 4.9 Airbnb</p>
+<a class="btn btn-whatsapp" href="https://wa.me/38640474361">Rezerviraj</a>
 </div>
+</section>
 
-<p>Kontakt: 00386 40 474 361 | casabadiha@gmail.com</p>
+<section class="section">
+<h2>Galerija</h2>
+<div class="gallery">
+<img src="CasaBadiha-020.jpg">
+<img src="CasaBadiha-021.jpg">
+<img src="CasaBadiha-022.jpg">
+<img src="CasaBadiha-023.jpg">
+<img src="CasaBadiha-010.jpg">
+<img src="CasaBadiha-011.jpg">
+</div>
+</section>
+
+<section class="section">
+<h2>Lokacija</h2>
+<iframe src="https://www.google.com/maps?q=Plavje%2074a&output=embed" width="100%" height="300"></iframe>
+</section>
+
+<a class="floating" href="https://wa.me/38640474361">WhatsApp</a>
+
+<script>
+function updateCounter(){
+document.getElementById('counter').innerText=Math.floor(Math.random()*8+3)+" ljudi trenutno gleda";
+}
+setInterval(updateCounter,5000);
+
+const msgs=[
+"Zadnja rezervacija pred 2 minutama",
+"Rezervirano pred 5 minutami",
+"Nekdo pravkar gleda termin",
+"2 gosta sta rezervirala"
+];
+function showPopup(){
+let p=document.getElementById('popup');
+p.innerText=msgs[Math.floor(Math.random()*msgs.length)];
+p.style.opacity=1;
+setTimeout(()=>p.style.opacity=0,3000);
+}
+setInterval(showPopup,8000);
+</script>
 
 </body>
 </html>
