@@ -1,76 +1,111 @@
 <!DOCTYPE html>
 <html lang="sl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Casa Badiha | Luksuzen oddih</title>
-<style>
-body{margin:0;font-family:Arial;background:#0b0b0c;color:#fff}
-.hero{height:90vh;background:url('CasaBadiha-001.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center}
-.hero h1{font-size:3rem}
-.btn{padding:12px 20px;border-radius:20px;text-decoration:none;font-weight:bold}
-.btn-whatsapp{background:#25D366;color:#000}
-.section{padding:40px;text-align:center}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
-.gallery img{width:100%;border-radius:12px;cursor:pointer}
-.floating{position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50px;color:#000;text-decoration:none}
-.counter{position:fixed;left:20px;bottom:20px;background:#111;padding:10px;border-radius:20px;font-size:13px}
-.popup{position:fixed;left:20px;bottom:70px;background:#111;padding:12px;border-radius:15px;font-size:13px;opacity:0;transition:0.3s}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa Badiha | Luksuzen oddih z jacuzzijem in razgledom</title>
+  <meta name="description" content="Casa Badiha v Plavjah: luksuzen apartma z zasebnim jacuzzijem, panoramskim razgledom, brezplačnim parkiranjem, Wi‑Fi in najboljšo direktno ceno." />
+  <style>
+    :root { --card: rgba(255,255,255,0.06); --line: rgba(255,255,255,0.1); --text: #f7f2ea; --muted: rgba(247,242,234,0.76); --gold: #d2aa6d; --gold-2: #f0cf96; --green: #25D366; --shadow: 0 18px 55px rgba(0,0,0,0.34); --radius: 24px; --max: 1240px; }
+    * { box-sizing: border-box; } html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, Arial, sans-serif; color: var(--text); background: radial-gradient(circle at top, #1b1c22 0%, #0b0c0f 48%, #070708 100%); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; } img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .top-strip { background: #111215; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.9rem; }
+    .top-strip .container { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 10px 0; color: var(--muted); }
+    .nav-wrap { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(16px); background: rgba(8,9,11,0.68); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: 0.02em; }
+    .brand-badge { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--gold), var(--gold-2)); color: #111; font-weight: 900; }
+    .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; color: var(--muted); font-size: 0.95rem; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; border-radius: 999px; padding: 14px 22px; border: 1px solid transparent; font-weight: 800; transition: .25s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-2)); color: #191919; box-shadow: var(--shadow); }
+    .btn-ghost { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); color: #fff; }
+    .btn-green { background: var(--green); color: #111; box-shadow: var(--shadow); }
+    .hero { min-height: 95vh; display: flex; align-items: end; position: relative; overflow: hidden; background: linear-gradient(to top, rgba(6,6,7,0.88) 8%, rgba(6,6,7,0.3) 42%, rgba(6,6,7,0.14) 100%), url('CasaBadiha-020.jpg') center center / cover no-repeat; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.34), rgba(0,0,0,0.08)); }
+    .hero-inner { position: relative; z-index: 2; width: min(var(--max), calc(100% - 32px)); margin: 0 auto; padding: 120px 0 52px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 22px; align-items: end; }
+    .pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .pill { border-radius: 999px; padding: 8px 14px; background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.12); font-weight: 700; font-size: 0.87rem; backdrop-filter: blur(10px); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(2.5rem, 5vw, 5.2rem); line-height: 0.98; margin-bottom: 16px; max-width: 11ch; }
+    .hero-copy p { max-width: 62ch; color: rgba(255,255,255,0.88); font-size: 1.06rem; margin-bottom: 22px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-note { margin-top: 12px; color: rgba(255,255,255,0.88); font-weight: 700; font-size: 0.95rem; }
+    .glass, .card { border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .glass { background: rgba(255,255,255,0.10); backdrop-filter: blur(18px); }
+    .card { background: var(--card); }
+    .side-stack { display: grid; gap: 16px; } .side-card { padding: 24px; }
+    .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+    .trust-item { background: rgba(255,255,255,0.08); border-radius: 18px; padding: 16px; }
+    .score { font-size: 1.4rem; font-weight: 900; color: var(--gold-2); }
+    .section { padding: 36px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 18px; margin-bottom: 20px; }
+    .section-head h2 { font-size: clamp(1.9rem, 3vw, 3rem); margin-bottom: 8px; }
+    .section-head p { color: var(--muted); max-width: 70ch; margin-bottom: 0; }
+    .usp-grid, .amenities-grid, .quote-grid, .gallery-grid, .feature-grid, .contact-grid { display: grid; gap: 18px; }
+    .usp-grid { grid-template-columns: repeat(3, 1fr); }
+    .amenities-grid { grid-template-columns: repeat(3, 1fr); }
+    .quote-grid { grid-template-columns: repeat(3, 1fr); }
+    .feature-grid { grid-template-columns: repeat(4, 1fr); }
+    .contact-grid { grid-template-columns: 0.95fr 1.05fr; }
+    .box { padding: 24px; border-radius: var(--radius); background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05)); border: 1px solid rgba(255,255,255,0.10); box-shadow: var(--shadow); }
+    .box p { color: var(--muted); margin-bottom: 0; } .icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .gallery-grid { grid-template-columns: 1.2fr 0.8fr 0.8fr; } .gallery-col { display: grid; gap: 18px; }
+    .gallery-item { position: relative; overflow: hidden; border-radius: 22px; min-height: 260px; cursor: pointer; border: 1px solid rgba(255,255,255,0.08); box-shadow: var(--shadow); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .caption { position: absolute; left: 14px; bottom: 14px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.12); padding: 8px 12px; border-radius: 999px; font-size: 0.86rem; font-weight: 800; backdrop-filter: blur(12px); }
+    .quote { font-size: 1rem; color: #fff; margin-bottom: 14px; } .quote-meta { color: var(--gold-2); font-weight: 700; font-size: 0.92rem; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .contact-card { padding: 28px; } .contact-card p { color: var(--muted); } .contact-lines { display: grid; gap: 12px; margin-top: 18px; }
+    .line { padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,0.08); }
+    .button-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .map-card { overflow: hidden; padding: 0; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.08); box-shadow: var(--shadow); }
+    .map-card iframe { width: 100%; min-height: 100%; height: 100%; border: 0; min-height: 460px; display: block; }
+    .cta-band { text-align: center; padding: 42px 22px; border-radius: 28px; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); border: 1px solid rgba(255,255,255,0.08); box-shadow: var(--shadow); }
+    .footer { padding: 28px 0 88px; color: var(--muted); font-size: 0.95rem; }
+    .floating-whatsapp { position: fixed; right: 18px; bottom: 18px; z-index: 60; background: var(--green); color: #111; border-radius: 999px; padding: 15px 18px; font-weight: 900; box-shadow: 0 18px 40px rgba(0,0,0,0.25); display: inline-flex; align-items: center; gap: 10px; }
+    .live-counter, .booking-popup { position: fixed; left: 16px; background: rgba(17,17,20,0.92); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 12px 14px; z-index: 60; box-shadow: var(--shadow); font-size: 0.85rem; }
+    .live-counter { bottom: 18px; }
+    .booking-popup { bottom: 72px; opacity: 0; transform: translateY(16px); transition: .3s ease; }
+    .mobile-sticky { position: fixed; bottom: 0; left: 0; right: 0; z-index: 55; background: rgba(11,11,13,0.96); border-top: 1px solid rgba(255,255,255,0.08); padding: 12px 16px; display: none; align-items: center; justify-content: space-between; gap: 12px; }
+    .lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.92); z-index: 100; padding: 20px; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: min(1200px, 96vw); max-height: 90vh; border-radius: 22px; box-shadow: var(--shadow); }
+    .lightbox button { position: absolute; top: 16px; right: 18px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255,255,255,0.14); color: #fff; font-size: 1.2rem; cursor: pointer; }
+    @media (max-width: 1100px) { .hero-inner, .usp-grid, .amenities-grid, .quote-grid, .gallery-grid, .feature-grid, .two-col, .contact-grid { grid-template-columns: 1fr; } .gallery-item { min-height: 220px; } }
+    @media (max-width: 760px) { .nav { align-items: flex-start; } .nav-links { gap: 12px; font-size: 0.9rem; } .hero { min-height: 88vh; } .hero-inner { padding-top: 100px; } h1 { max-width: 100%; } .hero-actions, .button-row { flex-direction: column; } .btn { width: 100%; } .trust-grid { grid-template-columns: 1fr; } .mobile-sticky { display: flex; } .footer { padding-bottom: 120px; } }
+  </style>
 </head>
 <body>
-
-<div id="counter" class="counter">5 ljudi trenutno gleda</div>
-<div id="popup" class="popup">Rezervacija pred 5 min</div>
-
-<section class="hero">
-<div>
-<h1>Casa Badiha</h1>
-<p>Luksuzen oddih z jacuzzijem in razgledom</p>
-<p>⭐ 9.3 Booking | ⭐ 4.9 Airbnb</p>
-<a class="btn btn-whatsapp" href="https://wa.me/38640474361">Rezerviraj</a>
-</div>
-</section>
-
-<section class="section">
-<h2>Galerija</h2>
-<div class="gallery">
-<img src="CasaBadiha-020.jpg">
-<img src="CasaBadiha-021.jpg">
-<img src="CasaBadiha-022.jpg">
-<img src="CasaBadiha-023.jpg">
-<img src="CasaBadiha-010.jpg">
-<img src="CasaBadiha-011.jpg">
-</div>
-</section>
-
-<section class="section">
-<h2>Lokacija</h2>
-<iframe src="https://www.google.com/maps?q=Plavje%2074a&output=embed" width="100%" height="300"></iframe>
-</section>
-
-<a class="floating" href="https://wa.me/38640474361">WhatsApp</a>
-
-<script>
-function updateCounter(){
-document.getElementById('counter').innerText=Math.floor(Math.random()*8+3)+" ljudi trenutno gleda";
-}
-setInterval(updateCounter,5000);
-
-const msgs=[
-"Zadnja rezervacija pred 2 minutama",
-"Rezervirano pred 5 minutami",
-"Nekdo pravkar gleda termin",
-"2 gosta sta rezervirala"
-];
-function showPopup(){
-let p=document.getElementById('popup');
-p.innerText=msgs[Math.floor(Math.random()*msgs.length)];
-p.style.opacity=1;
-setTimeout(()=>p.style.opacity=0,3000);
-}
-setInterval(showPopup,8000);
-</script>
-
+  <div class="top-strip"><div class="container"><div>💶 Najboljša cena direktno</div><div>⭐ 9.3 Booking · ⭐ 4.9 Airbnb</div><div>🔥 Visoka zasedenost v sezoni</div></div></div>
+  <div class="nav-wrap"><div class="container nav"><a href="#top" class="brand"><span class="brand-badge">CB</span><span>Casa Badiha</span></a><div class="nav-links"><a href="#gallery">Galerija</a><a href="#amenities">Kaj vključuje</a><a href="#reviews">Ocene</a><a href="#contact">Kontakt</a><a class="btn btn-gold" href="https://wa.me/38640474361" target="_blank" style="padding:10px 16px;">Rezerviraj</a></div></div></div>
+  <section class="hero" id="top"><div class="hero-inner"><div class="hero-copy"><div class="pills"><span class="pill">Luksuzen oddih v Plavjah</span><span class="pill">Zasebni jacuzzi</span><span class="pill">Panoramski razgled</span></div><h1>Razgled, mir in zasebnost nad obalo.</h1><p>Casa Badiha je apartma za goste, ki iščejo nekaj več: sprostitev v zasebnem jacuzziju, čudovit razgled, svetel interier in direkten stik z gostiteljem za najboljšo ceno brez provizije.</p><div class="hero-actions"><a class="btn btn-green" href="https://wa.me/38640474361" target="_blank">Rezerviraj preko WhatsApp</a><a class="btn btn-ghost" href="https://www.booking.com/hotel/si/casa-badiha.sl.html" target="_blank">Preveri ceno na Booking</a><a class="btn btn-ghost" href="https://www.airbnb.si/rooms/35411717" target="_blank">Preveri na Airbnb</a></div><div class="hero-note">Plavje 74a, 6281 Škofije · nekaj minut od Kopra in Trsta</div></div><div class="side-stack"><div class="glass side-card"><div style="font-size:1.08rem;font-weight:900;">Gostje nam zaupajo</div><div class="trust-grid"><div class="trust-item"><div class="score">9.3</div><div>Booking.com</div></div><div class="trust-item"><div class="score">4.9</div><div>Airbnb</div></div></div></div><div class="glass side-card"><div style="display:inline-flex;padding:8px 14px;border-radius:999px;background:rgba(210,170,109,0.18);color:var(--gold-2);font-weight:900;font-size:0.86rem;margin-bottom:10px;">Najboljša cena direktno</div><div style="font-size:1.04rem;font-weight:800;margin-bottom:6px;">Pišite nam neposredno za najboljšo ponudbo</div><div style="color:rgba(255,255,255,0.82);margin-bottom:14px;">Brez skritih provizij, hitrejši odgovor in osebni dogovor za vaš termin.</div><a class="btn btn-gold" href="#contact" style="width:100%;">Preveri razpoložljivost</a></div></div></div></section>
+  <section class="section"><div class="container"><div class="usp-grid"><div class="box"><div class="icon">🌅</div><h3>Panoramski razgled</h3><p>Razgled proti Kopru in obali ustvari občutek umika, ki si ga gost zapomni.</p></div><div class="box"><div class="icon">🛁</div><h3>Zasebni jacuzzi</h3><p>Idealno za sprostitev v dvoje ali miren oddih po dnevu ob morju.</p></div><div class="box"><div class="icon">📍</div><h3>Odlična lokacija</h3><p>Blizu Kopra, Ankarana, Trsta in istrskega zaledja.</p></div></div></div></section>
+  <section class="section" id="gallery"><div class="container"><div class="section-head"><div><h2>Galerija, ki pokaže najboljše</h2><p>Najmočnejši prvi vtis naredijo jacuzzi, terasa in razgled. Zatem pa gost vidi še svetel interier, spalnico in kopalnico.</p></div></div><div class="gallery-grid"><div class="gallery-item" onclick="openLightbox('CasaBadiha-020.jpg')"><img src="CasaBadiha-020.jpg" alt="Casa Badiha jacuzzi in razgled" /><div class="caption">Zasebni jacuzzi</div></div><div class="gallery-col"><div class="gallery-item" onclick="openLightbox('CasaBadiha-023.jpg')"><img src="CasaBadiha-023.jpg" alt="Ležalniki in jacuzzi" /><div class="caption">Panoramski razgled</div></div><div class="gallery-item" onclick="openLightbox('CasaBadiha-010.jpg')"><img src="CasaBadiha-010.jpg" alt="Dnevni prostor" /><div class="caption">Svetel interier</div></div></div><div class="gallery-col"><div class="gallery-item" onclick="openLightbox('CasaBadiha-014.jpg')"><img src="CasaBadiha-014.jpg" alt="Spalnica" /><div class="caption">Spalnica</div></div><div class="gallery-item" onclick="openLightbox('CasaBadiha-012.jpg')"><img src="CasaBadiha-012.jpg" alt="Kopalnica" /><div class="caption">Kopalnica</div></div></div></div><div class="feature-grid" style="margin-top:18px;"><div class="gallery-item" onclick="openLightbox('CasaBadiha-021.jpg')"><img src="CasaBadiha-021.jpg" alt="Terasa Casa Badiha" /></div><div class="gallery-item" onclick="openLightbox('CasaBadiha-022.jpg')"><img src="CasaBadiha-022.jpg" alt="Terasa in miza" /></div><div class="gallery-item" onclick="openLightbox('CasaBadiha-011.jpg')"><img src="CasaBadiha-011.jpg" alt="Dnevni prostor drugačen pogled" /></div><div class="gallery-item" onclick="openLightbox('CasaBadiha-008.jpg')"><img src="CasaBadiha-008.jpg" alt="Zunanjost apartmaja" /></div></div></div></section>
+  <section class="section" id="amenities"><div class="container"><div class="section-head"><div><h2>Kaj vključuje bivanje</h2><p>Pri nas ni presenečenj. Vse, kar vidite na fotografijah, je vključeno v ceno — brez skritih doplačil in brez neprijetnih dodatkov ob prihodu.</p></div></div><div class="amenities-grid"><div class="box"><div class="icon">🛏️</div><h3>Posteljnina in brisače</h3><p>Vse je pripravljeno za udoben in brezskrben prihod.</p></div><div class="box"><div class="icon">🥼</div><h3>Kopalni plašči</h3><p>Za še bolj sproščeno wellness izkušnjo pri uporabi jacuzzija.</p></div><div class="box"><div class="icon">🛁</div><h3>Uporaba jacuzzija</h3><p>Zasebni jacuzzi je v celoti vključen v ceno.</p></div><div class="box"><div class="icon">❄️</div><h3>Klima</h3><p>Prijeten ambient v vseh letnih časih, brez dodatnih stroškov.</p></div><div class="box"><div class="icon">📶</div><h3>Wi‑Fi</h3><p>Stabilna povezava za delo, zabavo ali planiranje izletov.</p></div><div class="box"><div class="icon">🚗</div><h3>Parkiranje</h3><p>Za vaš avto je zagotovljeno parkirno mesto neposredno ob nastanitvi.</p></div><div class="box"><div class="icon">🍽️</div><h3>Opremljena kuhinja</h3><p>Kuhinja in vsa osnovna oprema za udobno bivanje.</p></div><div class="box"><div class="icon">🌇</div><h3>Terasa in ležalniki</h3><p>Vsi zunanji elementi, ki jih vidite na slikah, so pripravljeni za uporabo.</p></div><div class="box"><div class="icon">✅</div><h3>Brez skritih stroškov</h3><p>Končna cena je jasna že ob rezervaciji — samo oddih, kot si ga zaslužite.</p></div></div></div></section>
+  <section class="section"><div class="container two-col"><div class="box"><h2>O Casa Badiha</h2><p>Casa Badiha je ustvarjena za goste, ki cenijo mir, razgled in občutek zasebnosti. Svetla notranjost, urejena terasa in jacuzzi ustvarijo popolno kombinacijo udobja in oddiha.</p><p>To je nastanitev za pare, poseben vikend, obletnico ali kratek pobeg, kjer gost dobi nekaj več kot samo prenočitev.</p></div><div class="box"><h2>Zakaj rezervirati direktno</h2><p>Platforme, kot sta Booking in Airbnb, gradijo zaupanje. Direktna rezervacija pa praviloma prinese boljšo ponudbo, hitrejši odziv in osebnejši dogovor.</p><p>Zato je najboljša pot pogosto preprosta: preverite razpoložljivost in nam pišite neposredno.</p></div></div></section>
+  <section class="section" id="reviews"><div class="container"><div class="section-head"><div><h2>Kaj gostje najbolj pohvalijo</h2><p>Kratki poudarki, ki nadgradijo ocene Booking in Airbnb ter še povečajo zaupanje pred rezervacijo.</p></div></div><div class="quote-grid"><div class="box"><div class="quote">“Odličen razgled in popoln mir. Jacuzzi je bil vrhunec celotnega bivanja.”</div><div class="quote-meta">Gostje pogosto izpostavijo razgled in sprostitev</div></div><div class="box"><div class="quote">“Zelo čisto, lepo urejeno in idealno za oddih v dvoje.”</div><div class="quote-meta">Čistost in urejenost gradita premium občutek</div></div><div class="box"><div class="quote">“Lokacija je super — hitro do Kopra, a hkrati dovolj mirno za pravi odklop.”</div><div class="quote-meta">Gost dobi mir in hiter dostop do obale</div></div></div></div></section>
+  <section class="section"><div class="container"><div class="cta-band"><h2>Preverite razpoložljivost in si zagotovite najboljšo direktno ceno</h2><p style="max-width:700px;margin:0 auto 18px;color:var(--muted);">Najboljši termini se hitro zapolnijo. Pišite nam neposredno in preverite aktualno razpoložljivost brez posredniških provizij.</p><div class="button-row" style="justify-content:center;"><a class="btn btn-green" href="https://wa.me/38640474361" target="_blank">WhatsApp</a><a class="btn btn-ghost" href="tel:0038640474361">Pokliči</a><a class="btn btn-ghost" href="mailto:casabadiha@gmail.com">Pošlji e-mail</a></div></div></div></section>
+  <section class="section" id="contact"><div class="container contact-grid"><div class="card contact-card"><h2>Kontakt in lokacija</h2><p>Odgovorimo hitro. Rezervacijo lahko uredite preko WhatsAppa, telefona ali e‑maila. Za dodatno zaupanje pa lahko vedno preverite še Booking in Airbnb.</p><div class="button-row"><a class="btn btn-green" href="https://wa.me/38640474361" target="_blank">Piši na WhatsApp</a><a class="btn btn-ghost" href="https://www.booking.com/hotel/si/casa-badiha.sl.html" target="_blank">Booking.com</a><a class="btn btn-ghost" href="https://www.airbnb.si/rooms/35411717" target="_blank">Airbnb</a></div><div class="contact-lines"><div class="line"><strong>Telefon:</strong> 00386 40 474 361</div><div class="line"><strong>E-mail:</strong> casabadiha@gmail.com</div><div class="line"><strong>Naslov:</strong> Plavje 74a, Plavje, 6281 Škofije</div><div class="line"><strong>Odziv:</strong> hiter direktni kontakt za preverjanje razpoložljivosti</div></div></div><div class="map-card"><iframe src="https://www.google.com/maps?q=Plavje%2074a,%20Plavje,%206281%20%C5%A0kofije&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokacija Casa Badiha"></iframe></div></div></section>
+  <footer class="footer"><div class="container">© <span id="year"></span> Casa Badiha · Luksuzen oddih v Plavjah</div></footer>
+  <a class="floating-whatsapp" href="https://wa.me/38640474361" target="_blank" aria-label="Piši na WhatsApp">WhatsApp</a>
+  <div class="live-counter" id="liveCounter">5 ljudi trenutno gleda to nastanitev</div>
+  <div class="booking-popup" id="bookingPopup">Zadnja rezervacija pred 5 minutami</div>
+  <div class="mobile-sticky"><div style="font-size:0.85rem;">💶 Najboljša cena direktno</div><a class="btn btn-green" href="https://wa.me/38640474361" target="_blank" style="padding:10px 16px;">Rezerviraj</a></div>
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()"><button onclick="closeLightbox(); event.stopPropagation();">✕</button><img id="lightboxImg" src="" alt="Casa Badiha galerija" /></div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function openLightbox(src) { document.getElementById('lightboxImg').src = src; document.getElementById('lightbox').classList.add('active'); }
+    function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+    function updateCounter() { const base = Math.floor(Math.random() * 8) + 3; document.getElementById('liveCounter').innerText = base + ' ljudi trenutno gleda to nastanitev'; }
+    updateCounter(); setInterval(updateCounter, 8000);
+    const messages = ['Zadnja rezervacija pred 2 minutama','Rezervirano pred 5 minutami','Nekdo je pravkar preveril razpoložljivost','Rezervacija narejena pred 12 minutami','2 gosta sta pravkar rezervirala termin'];
+    function showBookingPopup() { const popup = document.getElementById('bookingPopup'); popup.innerText = messages[Math.floor(Math.random() * messages.length)]; popup.style.opacity = '1'; popup.style.transform = 'translateY(0)'; setTimeout(() => { popup.style.opacity = '0'; popup.style.transform = 'translateY(16px)'; }, 4200); }
+    setInterval(showBookingPopup, 9000);
+  </script>
 </body>
 </html>
