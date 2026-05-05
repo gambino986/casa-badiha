@@ -1,1 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casa Badiha | Private Jacuzzi & Panoramic View near Koper</title>
+  <meta name="description" content="Casa Badiha in Plavje near Koper: private jacuzzi, terrace, panoramic views and a peaceful location close to Koper, Ankaran and Trieste. Book direct for the best offer.">
+  <meta name="keywords" content="Casa Badiha, apartment Plavje, apartment Koper, private jacuzzi, accommodation Slovenia, apartment with view, Istria getaway">
+  <meta name="author" content="Casa Badiha">
+  <meta name="robots" content="index, follow">
 
+  <link rel="canonical" href="https://casa-badiha.com/en/">
+  <link rel="alternate" hreflang="sl" href="https://casa-badiha.com/">
+  <link rel="alternate" hreflang="en" href="https://casa-badiha.com/en/">
+  <link rel="alternate" hreflang="it" href="https://casa-badiha.com/it/">
+  <link rel="alternate" hreflang="x-default" href="https://casa-badiha.com/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Casa Badiha | Private Jacuzzi & Panoramic View">
+  <meta property="og:description" content="Private jacuzzi, terrace, peace and panoramic views above the coast. Book direct with no platform fees.">
+  <meta property="og:url" content="https://casa-badiha.com/en/">
+  <meta property="og:image" content="https://casa-badiha.com/CasaBadiha-023.jpg">
+
+  <style>
+    :root{
+      --bg:#fbf7f0;
+      --card:#ffffff;
+      --text:#25211d;
+      --muted:#6f665d;
+      --gold:#b88945;
+      --gold-dark:#8a642d;
+      --line:#e8ded0;
+      --green:#1f7a4d;
+      --shadow:0 18px 50px rgba(54,38,20,.12);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#fffaf2 0%,var(--bg) 100%);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px,92%);margin:0 auto}
+    .topbar{
+      background:#2b241d;color:#fff;font-size:14px;padding:9px 0;
+    }
+    .topbar .container{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,250,242,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{font-weight:800;letter-spacing:.16em}
+    .navlinks{display:flex;gap:22px;align-items:center;font-size:14px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 18px;border-radius:999px;font-weight:700;
+      background:var(--gold);color:#fff;box-shadow:0 10px 24px rgba(184,137,69,.25);
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);background:var(--gold-dark)}
+    .btn.secondary{background:#fff;color:var(--text);border:1px solid var(--line);box-shadow:none}
+    .btn.whatsapp{background:#25D366;color:#102515}
+    .hero{padding:82px 0 50px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+    .kicker{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+    .pill{
+      display:inline-flex;align-items:center;gap:6px;
+      background:#fff;border:1px solid var(--line);border-radius:999px;
+      padding:8px 12px;color:var(--muted);font-size:14px;
+    }
+    h1{font-size:clamp(42px,6vw,76px);line-height:1.02;margin:0 0 20px;letter-spacing:-.04em}
+    h2{font-size:clamp(30px,4vw,48px);line-height:1.08;margin:0 0 14px;letter-spacing:-.03em}
+    h3{margin:0 0 8px;font-size:20px}
+    p{margin:0 0 16px;color:var(--muted)}
+    .lead{font-size:19px;color:#51483f}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0}
+    .address{color:#5d554e;font-weight:600}
+    .hero-card{
+      border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow);position:relative
+    }
+    .hero-card img{height:540px;width:100%;object-fit:cover}
+    .badge{
+      position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.92);
+      padding:14px 16px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,.12);
+      font-weight:800
+    }
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 0}
+    .stat{background:#fff;border:1px solid var(--line);padding:20px;border-radius:20px}
+    .stat strong{font-size:30px;color:var(--gold-dark);display:block}
+    section{padding:64px 0}
+    .intro{max-width:760px;margin-bottom:28px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature,.card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+      padding:24px;box-shadow:0 10px 30px rgba(54,38,20,.06)
+    }
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .photo{
+      overflow:hidden;border-radius:24px;background:#fff;border:1px solid var(--line);
+      box-shadow:0 10px 30px rgba(54,38,20,.06)
+    }
+    .photo img{height:300px;width:100%;object-fit:cover;transition:.35s ease}
+    .photo:hover img{transform:scale(1.035)}
+    .includes{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .include{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px}
+    .include b{display:block;margin-bottom:6px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+    .quote{font-size:18px;color:#332d27}
+    .cta{
+      background:linear-gradient(135deg,#2b241d,#5a4026);
+      color:#fff;border-radius:32px;padding:46px;box-shadow:var(--shadow)
+    }
+    .cta p{color:#eadfce}
+    .cta .btn.secondary{background:#fff;color:#2b241d}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .contact-line{padding:14px 0;border-bottom:1px solid var(--line)}
+    footer{padding:36px 0;color:var(--muted);border-top:1px solid var(--line);text-align:center}
+    .floating-wa{
+      position:fixed;right:18px;bottom:18px;z-index:80;
+      background:#25D366;color:#102515;border-radius:999px;padding:14px 18px;
+      font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.18)
+    }
+    .trust-pop{
+      position:fixed;left:18px;bottom:18px;z-index:70;
+      background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px 16px;
+      box-shadow:0 12px 30px rgba(0,0,0,.12);font-size:13px;color:#51483f;
+      max-width:250px
+    }
+    .trust-pop b{display:block;color:var(--gold-dark);font-size:14px}
+    @media(max-width:900px){
+      .hero-grid,.split,.contact-grid{grid-template-columns:1fr}
+      .features,.gallery{grid-template-columns:1fr 1fr}
+      .includes{grid-template-columns:1fr 1fr}
+      .hero-card img{height:420px}
+      .navlinks a:not(.btn){display:none}
+      .trust-pop{display:none}
+    }
+    @media(max-width:560px){
+      .features,.gallery,.includes,.stats{grid-template-columns:1fr}
+      .hero{padding:54px 0 34px}
+      .hero-card img{height:360px}
+      .cta{padding:30px 22px}
+      .floating-wa{left:14px;right:14px;text-align:center}
+    }
+
+    /* Skrij vse vidne napise pod slikami */
+    figcaption,
+    .photo figcaption,
+    .gallery figcaption,
+    .caption,
+    .image-caption {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      overflow: hidden !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+
+    .lang-switch{display:flex;gap:8px;align-items:center;font-size:13px;font-weight:800}
+    .lang-switch a{border:1px solid var(--line);background:#fff;padding:7px 9px;border-radius:999px;color:var(--text)}
+    .lang-switch a.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LodgingBusiness",
+    "name":"Casa Badiha",
+    "url":"https://casa-badiha.com/",
+    "image":"https://casa-badiha.com/CasaBadiha-023.jpg",
+    "telephone":"+38640474361",
+    "email":"casabadiha@gmail.com",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Plavje 74a",
+      "addressLocality":"Plavje",
+      "postalCode":"6281",
+      "addressCountry":"SI"
+    },
+    "amenityFeature":[
+      {"@type":"LocationFeatureSpecification","name":"Private jacuzzi","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Terasa","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Parking","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Best direct price</span>
+      <span>⭐ 9.3 Booking · ⭐ 4.9 Airbnb</span>
+      <span>High demand in season</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top" aria-label="Casa Badiha domov">CASA BADIHA</a>
+        <div class="navlinks">
+          <a href="#galerija">Gallery</a>
+          <a href="#vkljucuje">Included</a>
+          <a href="#ocene">Reviews</a>
+          <a href="#kontakt">Contact</a>
+          <div class="lang-switch"><a href="/">SL</a><a class="active" href="/en/">EN</a><a href="/it/">IT</a></div>
+          <a class="btn" href="https://wa.me/38640474361?text=Hello,%20I%20would%20like%20to%20check%20availability%20for%20Casa%20Badiha." target="_blank" rel="noopener">Book now</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="kicker">
+            <span class="pill">Luxury stay in Plavje</span>
+            <span class="pill">Private jacuzzi</span>
+            <span class="pill">Panoramic view</span>
+          </div>
+          <h1>Views, peace and privacy above the coast.</h1>
+          <p class="lead">Casa Badiha is made for guests who want more than just a stay: a private jacuzzi, beautiful views, bright interiors and direct contact with the host for the best price without platform fees.</p>
+          <div class="actions">
+            <a class="btn whatsapp" href="https://wa.me/38640474361?text=Hello,%20I%20would%20like%20to%20check%20availability%20for%20Casa%20Badiha." target="_blank" rel="noopener">Book now preko WhatsApp</a>
+            <a class="btn secondary" href="https://www.booking.com/" target="_blank" rel="noopener">Check on Booking</a>
+            <a class="btn secondary" href="https://www.airbnb.si/rooms/35411717" target="_blank" rel="noopener">Check on Airbnb</a>
+          </div>
+          <p class="address">Plavje 74a, 6281 Škofije · minutes from Koper and Trieste</p>
+
+          <div class="stats">
+            <div class="stat"><strong>9.3</strong>Booking.com</div>
+            <div class="stat"><strong>4.9</strong>Airbnb</div>
+            <div class="stat"><strong>Direktno</strong>Best offer</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="CasaBadiha-023.jpg" alt="Private jacuzzi Casa Badiha z ležalniki in panoramskim razgledom proti morju" loading="eager">
+          <div class="badge">Private jacuzzi + razgled</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="features">
+          <article class="feature">
+            <h3>Panoramic view</h3>
+            <p>Views towards Koper and the coast create the kind of peaceful escape guests remember.</p>
+          </article>
+          <article class="feature">
+            <h3>Private jacuzzi</h3>
+            <p>Perfect for relaxing as a couple or unwinding after a day by the sea.</p>
+          </article>
+          <article class="feature">
+            <h3>Excellent location</h3>
+            <p>Close to Koper, Ankaran, Trieste and the Istrian countryside.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerija">
+      <div class="container">
+        <div class="intro">
+          <h2>Gallery</h2>
+          <p>Let the photos speak for the feeling of space, peace and comfort.</p>
+        </div>
+
+        <div class="gallery">
+          <figure class="photo">
+            <img src="CasaBadiha-020.jpg" alt="Zunanja terasa Casa Badiha z zasebnim jacuzzijem, ležalniki in jedilno mizo" loading="lazy">
+          </figure>
+
+          <figure class="photo">
+            <img src="CasaBadiha-023.jpg" alt="Ležalniki ob zasebnem jacuzziju Casa Badiha s pogledom na zelenje in morje" loading="lazy">
+          </figure>
+
+          <figure class="photo">
+            <img src="CasaBadiha-021.jpg" alt="Panoramic view s terase Casa Badiha proti Kopru in morju" loading="lazy">
+          </figure>
+
+          <figure class="photo">
+            <img src="CasaBadiha-008.jpg" alt="Svetel dnevni prostor Casa Badiha z jedilnico, kuhinjo in udobnim kavčem" loading="lazy">
+          </figure>
+
+          <figure class="photo">
+            <img src="CasaBadiha-014.jpg" alt="Pozdravna košarica za goste v apartmaju Casa Badiha" loading="lazy">
+          </figure>
+
+          <figure class="photo">
+            <img src="CasaBadiha-010.jpg" alt="Moderna kopalnica Casa Badiha s tušem, pralnim strojem in urejeno opremo" loading="lazy">
+          </figure>
+
+          <figure class="photo">
+            <img src="CasaBadiha-012.jpg" alt="Urejena kopalnica Casa Badiha z umivalnikom in čistim svetlim ambientom" loading="lazy">
+          </figure>
+
+          <figure class="photo">
+            <img src="CasaBadiha-022.jpg" alt="Terasa Casa Badiha z zunanjo mizo in prostorom za druženje" loading="lazy">
+          </figure>
+
+          <figure class="photo">
+            <img src="CasaBadiha-011.jpg" alt="Kopalniški umivalnik Casa Badiha in pogled proti dnevnemu prostoru" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="vkljucuje">
+      <div class="container">
+        <div class="intro">
+          <h2>Included bivanje</h2>
+          <p>No surprises. Everything you see in the photos is included in the price — no hidden extras and no unpleasant add-ons on arrival.</p>
+        </div>
+
+        <div class="includes">
+          <div class="include"><b>Bed linen and towels</b><p>Everything is ready for a comfortable, easy arrival.</p></div>
+          <div class="include"><b>Bathrobes</b><p>For a more relaxing wellness experience by the jacuzzi.</p></div>
+          <div class="include"><b>Jacuzzi use</b><p>Private jacuzzi je v celoti vključen v ceno.</p></div>
+          <div class="include"><b>Air conditioning</b><p>Comfort in every season, with no extra charge.</p></div>
+          <div class="include"><b>Wi‑Fi</b><p>Reliable connection for work, entertainment or planning trips.</p></div>
+          <div class="include"><b>Parking</b><p>A parking space is available directly by the accommodation.</p></div>
+          <div class="include"><b>Equipped kitchen</b><p>Kitchen and essentials for a comfortable stay.</p></div>
+          <div class="include"><b>No hidden costs</b><p>The final price is clear when you book.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <article class="card">
+          <h2>About Casa Badiha</h2>
+          <p>Casa Badiha is designed for guests who appreciate peace, views and privacy. Bright interiors, a beautiful terrace and a private jacuzzi create the perfect mix of comfort and relaxation.</p>
+          <p>It is ideal for couples, a special weekend, an anniversary or a short escape where the stay feels like more than just accommodation.</p>
+        </article>
+
+        <article class="card">
+          <h2>Why book direct</h2>
+          <p>Platforms like Booking and Airbnb build trust. Direct booking usually gives you a better offer, faster replies and a more personal arrangement.</p>
+          <p>The easiest way is simple: check availability and contact us directly.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="ocene">
+      <div class="container">
+        <div class="intro">
+          <h2>What guests love most</h2>
+          <p>Short highlights that support the Booking and Airbnb ratings and help guests book with confidence.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <p class="quote">“Beautiful view and complete peace. The jacuzzi was the highlight of the stay.”</p>
+            <p>Guests often mention the view and relaxation.</p>
+          </article>
+          <article class="feature">
+            <p class="quote">“Very clean, nicely arranged and perfect for a couple’s getaway.”</p>
+            <p>Cleanliness and details create a premium feeling.</p>
+          </article>
+          <article class="feature">
+            <p class="quote">“Great location — close to Koper, yet peaceful enough to truly switch off.”</p>
+            <p>Guests get peace and quick access to the coast.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Check availability and get the best direct price</h2>
+          <p>The best dates fill quickly. Contact us directly to check current availability without platform fees.</p>
+          <div class="actions">
+            <a class="btn whatsapp" href="https://wa.me/38640474361?text=Hello,%20I%20would%20like%20to%20check%20availability%20for%20Casa%20Badiha." target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn secondary" href="tel:+38640474361">Call</a>
+            <a class="btn secondary" href="mailto:casabadiha@gmail.com?subject=Inquiry%20Casa%20Badiha">Send e-mail</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact in lokacija</h2>
+          <p>We reply quickly. You can arrange your booking via WhatsApp, phone or e-mail. For extra confidence, you can also check Booking and Airbnb.</p>
+          <div class="actions">
+            <a class="btn whatsapp" href="https://wa.me/38640474361?text=Hello,%20I%20would%20like%20to%20check%20availability%20for%20Casa%20Badiha." target="_blank" rel="noopener">Message on WhatsApp</a>
+            <a class="btn secondary" href="https://www.booking.com/" target="_blank" rel="noopener">Booking.com</a>
+            <a class="btn secondary" href="https://www.airbnb.si/rooms/35411717" target="_blank" rel="noopener">Airbnb</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="contact-line"><b>Phone:</b> 00386 40 474 361</div>
+          <div class="contact-line"><b>E-mail:</b> casabadiha@gmail.com</div>
+          <div class="contact-line"><b>Address:</b> Plavje 74a, Plavje, 6281 Škofije</div>
+          <div class="contact-line"><b>Response:</b> fast direct contact to check availability</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© Casa Badiha · Luxury stay in Plavje</div>
+  </footer>
+
+  <div class="trust-pop">
+    <b>Best direct price</b>
+    Contact us for availability without platform fees.
+  </div>
+
+  <a class="floating-wa" href="https://wa.me/38640474361?text=Hello,%20I%20would%20like%20to%20check%20availability%20for%20Casa%20Badiha." target="_blank" rel="noopener">Book now</a>
+</body>
+</html>
